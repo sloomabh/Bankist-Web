@@ -13,11 +13,29 @@ btnScrollTo.addEventListener('click', function (e) {
   ///Scrolling
   section1.scrollIntoView({ behavior: 'smooth' });
 });
-const h1 = document.querySelector('h1');
 
-const alertH1 = function (e) {
-  alert('addEventListener: Great! You are reading the heading :D');
-};
-h1.addEventListener('mouseenter', alertH1);
-h1.removeEventListener('mouseenter', alertH1);
-setTimeout(() => h1.removeEventListener('mouseenter', alertH1), 3000);
+//  Page navigation
+
+/************************* low perfermonce ******************** */
+// document.querySelectorAll('.nav__link').forEach(function (el) {
+//   el.addEventListener('click', function (e) {
+//     e.preventDefault(); //we removed the default behaviour from the HTML
+//     console.log('link');
+//     const id = this.getAttribute('href');
+//     console.log(id);
+//     document.querySelector(id).scrollIntoView({ behavior: 'smooth' });
+//   });
+// });
+
+/************************* High perfermonce ******************** */
+// 1. Add event listener to common parent element
+// 2. Determine what element originated the event
+document.querySelector('.nav__links').addEventListener('click', function (e) {
+  e.preventDefault();
+
+  // Matching strategy
+  if (e.target.classList.contains('nav__link')) {
+    const id = e.target.getAttribute('href');
+    document.querySelector(id).scrollIntoView({ behavior: 'smooth' });
+  }
+});
