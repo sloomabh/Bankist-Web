@@ -1,0 +1,23 @@
+{
+  "name": "bankist-web",
+  "version": "1.0.0",
+  "description": "bankist-web page",
+  "default": "index.html",
+  "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sloomabh/Bankist-Web.git"
+  },
+  "author": "Salim ben halima",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sloomabh/Bankist-Web/issues"
+  },
+  "homepage": "https://github.com/sloomabh/Bankist-Web#readme",
+  "devDependencies": {
+    "parcel": "^2.0.0-rc.0"
+  }
+}

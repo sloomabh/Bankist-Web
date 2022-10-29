@@ -145,12 +145,13 @@ const sectionObserver = new IntersectionObserver(revealSection, {
 
 allSections.forEach(function (section) {
   sectionObserver.observe(section);
-  // section.classList.add('section--hidden');
+  section.classList.add('section--hidden');
 });
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // Lazy loading images
 const imgTargets = document.querySelectorAll('img[data-src]');
+console.log(imgTargets);
 
 const loadImg = function (entries, observer) {
   const [entry] = entries;
@@ -158,12 +159,13 @@ const loadImg = function (entries, observer) {
   if (!entry.isIntersecting) return;
 
   // Replace src with data-src   low resolution to high resolution
-  entry.target.src = entry.target.dataset.src;
-
-  entry.target.addEventListener('load', function () {
+  // entry.target.src = entry.target.dataset.src;
+  entry.target.classList.remove('lazy-img');
+  /*entry.target.addEventListener('load', function () {
     //after finish loading move the blur
+    console.log('finish loading');
     entry.target.classList.remove('lazy-img');
-  });
+  });*/
 
   observer.unobserve(entry.target); //stop observing
 };

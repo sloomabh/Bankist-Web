@@ -435,7 +435,6 @@ h4 {
   bottom: 5%;
   left: 50%;
   transform: translateX(-50%);
-  border-style: ridge;
   display: flex;
 }
 
