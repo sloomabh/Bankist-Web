@@ -672,3 +672,22 @@ h4 {
   font-size: 1.5rem;
   font-weight: 400;
 }
+.fixed {
+  position: fixed;
+  left: 10 px;
+  bottom: 30 %;
+  font-size: 2rem;
+  opacity: 0.7;
+  text-align: center;
+  width: 1505 px;
+}
+.index {
+  background-color: rgba(139, 130, 130, 0.8);
+  border-radius: 5px;
+  padding: 3px 10px;
+  text-decoration: none;
+  margin-bottom: 15px;
+}
+.link {
+  text-decoration: none;
+}
